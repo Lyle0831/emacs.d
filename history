@@ -4,5 +4,5 @@
 (setq savehist-minibuffer-history-variables '(buffer-name-history minibuffer-history file-name-history extended-command-history))
 (setq buffer-name-history '("init.el" "init-win.el" "init.el" "lisp"))
 (setq minibuffer-history '("*is-a-win*" "use-package"))
-(setq file-name-history '("~/.emacs.d/lisp/init-package.el" "~/.emacs.d/lisp/init-themes.el" "~/.emacs.d/lisp/init-package.el" "~/.emacs.d/lisp/init-package" "~/.emacs.d/lisp/" "~/.emacs.d/lisp/hello.el" "~/.emacs.d/lisp/init-win.el" "~/.emacs.d/lisp/init-org.el" "~/.emacs.d/lisp/init-win.el" "~/.emacs.d/lisp/init-org.el" "~/.emacs.d/lisp/init-win.el" "~/.emacs.d/lisp" "~/.emacs.d/init.el"))
+(setq file-name-history '("~/.emacs.d/lisp/init-win.el" "~/.emacs.d/init.el" "~/.emacs.d/lisp/init-package.el" "~/.emacs.d/lisp/init-themes.el" "~/.emacs.d/lisp/init-package.el" "~/.emacs.d/lisp/init-package" "~/.emacs.d/lisp/" "~/.emacs.d/lisp/hello.el" "~/.emacs.d/lisp/init-win.el" "~/.emacs.d/lisp/init-org.el" "~/.emacs.d/lisp/init-win.el" "~/.emacs.d/lisp/init-org.el" "~/.emacs.d/lisp/init-win.el" "~/.emacs.d/lisp" "~/.emacs.d/init.el"))
 (setq extended-command-history '("package-install" "package-list-packages" "eval-region" "package-list-packages" "emacs-version" "eval-buffer" "eval-region"))

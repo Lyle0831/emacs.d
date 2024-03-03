@@ -34,6 +34,7 @@
 (add-to-list 'default-frame-alist '(width . 103));default frame width
 (add-to-list 'default-frame-alist '(height . 54));default frame height
 (setq word-wrap-by-category t)                   ;deal with the line change problem
+(global-visual-line-mode 1)                      ;1 for on, 0 for off.
 
 ;; some keyboard shortcut setting
 (global-set-key (kbd "RET") 'newline-and-indent) ;set RET as newline and indent
@@ -54,8 +55,8 @@
   (previous-line 10))
 (global-set-key (kbd "M-n") 'next-ten-lines)
 (global-set-key (kbd "M-p") 'previous-ten-lines)
-(global-set-key (kbd "C-j") nil)                 ;unbinding C-j
-(global-set-key (kbd "C-j C-k") 'kill-whole-line);cut the whole line
+;(global-set-key (kbd "C-j") nil)                 ;unbinding C-j
+;(global-set-key (kbd "C-j C-k") 'kill-whole-line);cut the whole line
 
 (require 'init-package)
 (require 'init-themes)
