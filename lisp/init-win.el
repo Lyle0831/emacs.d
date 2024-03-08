@@ -3,6 +3,8 @@
 
 
 ;;;Code:
+(add-to-list 'default-frame-alist '(width . 80));default frame width
+(add-to-list 'default-frame-alist '(height . 45));default frame height
 
 ;;beancount
 (require 'beancount)

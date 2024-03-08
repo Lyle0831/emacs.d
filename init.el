@@ -34,7 +34,7 @@
 (add-to-list 'default-frame-alist '(width . 103));default frame width
 (add-to-list 'default-frame-alist '(height . 54));default frame height
 (setq word-wrap-by-category t)                   ;deal with the line change problem
-(global-visual-line-mode 1)                      ;1 for on, 0 for off.
+(global-visual-line-mode 1)                      ;1 for on, 0 for off
 
 ;; some keyboard shortcut setting
 (global-set-key (kbd "RET") 'newline-and-indent) ;set RET as newline and indent
