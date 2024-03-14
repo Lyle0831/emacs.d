@@ -11,7 +11,7 @@
 (defconst *spell-check-support-enabled* t)
 (defconst *is-a-mac* (eq system-type 'darwin))
 (defconst *is-a-win* (eq system-type 'windows-nt))
-
+(defconst *is-a-linux* (eq system-type 'gnu/linux))
 (setq gc-cons-threshold (* 128 1024 1024))
 (setq read-process-output-max (* 4 1024 1024))
 (setq process-adaptive-read-buffering nil)
@@ -60,6 +60,7 @@
 
 (require 'init-package)
 (require 'init-themes)
+(require 'init-org)
 
 (when *is-a-win*
   (require 'init-win))
@@ -80,3 +81,5 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+

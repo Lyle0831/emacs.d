@@ -37,19 +37,38 @@
   :ensure t
   :if (display-graphic-p))
 
-(require 'init-org)
+(setq org-default-notes-file "E:/Lei/roam-notes/agenda/inbox.org")
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline org-default-notes-file "Tasks")
+         "* TODO %?\n  %i\n  %a")
+	("i" "Idea" entry (file+headline org-default-notes-file "Idea")
+	"* %?\n %i\n %a")
+        ("j" "Journal" entry (file+datetree org-default-notes-file)
+         "* %?\nEntered on %U\n  %i\n ")))
+
+
+(use-package org
+    :defer t ;; 
+    :custom
+    (org-highlight-latex-and-related '(native latex entities)) ;; LaTeX highlight
+    (org-pretty-entities t) ;; LaTeX Code prettify
+   ;(org-pretty-entities-include-sub-superscripts nil) ;; show LaTeX subscript 
+    (org-format-latex-options
+     '(:foreground default :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers ("begin" "$1" "$" "$$" "\\(" "\\["))) ;; make the preview picture bigger
+    :config
+    (add-hook 'org-mode-hook #'org-cdlatex-mode) ;; open cdlatex
+    )
+
+;;open python mode in org
+(org-babel-do-load-languages
+      'org-babel-load-languages
+      '((emacs-lisp . t)
+        (python . t)))
 
 (setq org-directory "E:/Lei/roam-notes")
-(setq org-mobile-inbox-for-pull "E:/Lei/roam-notes/mobile/inbox.org")
-(setq org-mobile-directory "E:/Lei/roam-notes/mobile")
-(defcustom org-mobile-checksum-binary (or (executable-find "D:/Applications/Scoop/apps/gtools/4.2/md5sums.exe"))
- "Executable used for computing checksums of agenda files."
- :group 'org-mobile
- :type 'string)
-;;用于MobileOrg
-
 ;(setq prettify-symbols-unprettify-at-point t) ;;自动展开,没有用
 (setq temporary-file-directory "d:/.emacs_temp")
+
 (pdf-tools-install)
 ;(pdf-loader-install) ;打开pdf文件时再加载
 (add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode -1)));取消显示行号
@@ -60,47 +79,6 @@
 (define-key pdf-annot-minor-mode-map (kbd "C-a d") 'pdf-annot-delete);;删除
 ;;定义看pdf时的快捷键
 
-
-(use-package org-roam
-  :ensure t
-  :custom
-  (org-roam-directory (file-truename "E:/Lei/roam-notes/"))
-  (org-roam-dailies-directory "daily/")
-  :bind (("C-c n l" . org-roam-buffer-toggle);;显示后链窗口
-         ("C-c n f" . org-roam-node-find)
-         ;("C-c n g" . org-roam-graph)
-         ("C-c n i" . org-roam-node-insert)
-         ("C-c n c" . org-roam-capture)
-	 ("C-c n u" . org-roam-ui-mode);;浏览器中可视化
-         ;; Dailies
-         ("C-c n j" . org-roam-dailies-capture-today))
-  :bind-keymap
-  ("C-c n d" . org-roam-dailies-map) ;;日记菜单
-  :config
-  ;; If you're using a vertical completion framework, you might want a more informative completion interface
-					;(setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
-  (require 'org-roam-dailies)
-    (setq my/ref-template
-        (concat "#+FILETAGS: reading research \n"
-                "- tags :: %^{keywords} \n"
-                "* %^{title}\n"
-                ":PROPERTIES:\n"
-                ":Custom_ID: %^{citekey}\n"
-                ":URL: %^{url}\n"
-                ":AUTHOR: %^{author-or-editor}\n"
-                ":NOTER_DOCUMENT: e:/Lei/research-papers/%^{citekey}.pdf\n"
-                ":NOTER_PAGE:\n"
-                ":END:"))
-  (add-to-list 'org-roam-capture-templates
-               `("r" "Zotero 文献模板" plain ; 文献笔记模板
-                 ,my/ref-template
-                 :target
-                 (file+head "research/papers/${citekey}.org" "#+title: ${title}\n")))
-  (org-roam-db-autosync-mode));启动时自动同步数据库
-  ;; If using org-roam-protocol
-  ;(require 'org-roam-protocol))
-
-;;;使用org-roam
 
 (use-package org-roam-ui
   :ensure t

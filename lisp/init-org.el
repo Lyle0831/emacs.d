@@ -3,35 +3,33 @@
 
 ;;;Code:
 ;;some shortcut
-(global-set-key (kbd "C-c l") #'org-store-link)
+;(global-set-key (kbd "C-c l") #'org-store-link)
 (global-set-key (kbd "C-c a") #'org-agenda)
-(global-set-key (kbd "C-c c") #'org-capture)
-(setq org-default-notes-file "E:/Lei/roam-notes/agenda/inbox.org")
-(setq org-capture-templates
-      '(("t" "Todo" entry (file+headline org-default-notes-file "Tasks")
-         "* TODO %?\n  %i\n  %a")
-	("i" "Idea" entry (file+headline org-default-notes-file "Idea")
-	"* %?\n %i\n %a")
-        ("j" "Journal" entry (file+datetree org-default-notes-file)
-         "* %?\nEntered on %U\n  %i\n ")))
+;(global-set-key (kbd "C-c c") #'org-capture)
 
 
-(use-package org
-    :defer t ;; 
-    :custom
-    (org-highlight-latex-and-related '(native latex entities)) ;; LaTeX highlight
-    (org-pretty-entities t) ;; LaTeX Code prettify
-   ;(org-pretty-entities-include-sub-superscripts nil) ;; show LaTeX subscript 
-    (org-format-latex-options
-     '(:foreground default :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers ("begin" "$1" "$" "$$" "\\(" "\\["))) ;; make the preview picture bigger
-    :config
-    (add-hook 'org-mode-hook #'org-cdlatex-mode) ;; open cdlatex
-    )
-
-;;open python mode in org
-(org-babel-do-load-languages
-      'org-babel-load-languages
-      '((emacs-lisp . t)
-        (python . t)))
+(use-package org-roam
+  :ensure t
+  :unless (and *is-a-linux* (eq system-type 'DLOFR7FAT0DUIYL))
+  :init
+  (setq org-roam-directory (file-truename "~/Nutstore Files/roam-notes/"))
+  (when *is-a-win*
+    (setq org-roam-directory (file-truename "E:/Lei/roam-notes/")))
+  :custom
+  (org-roam-dailies-directory "daily/")
+  :bind
+  ("C-c n f" . org-roam-node-find)
+  ("C-c n i" . org-roam-node-insert)
+  ("C-c n c" . org-roam-capture)
+  ("C-c n j" . org-roam-dailies-capture-today)
+  ;("C-c n u" . org-roam-ui-mode)
+  ;("C-c n l" . org-roam-buffer-toggle)
+  ;("C-c n g" . org-roam-graph)
+  ;:bind-keymap
+  ;("C-c n d" . org-roam-dailies-map)
+  :config
+  (require 'org-roam-dailies)
+  (completion-at-point)                     ;completion title when in link
+  (org-roam-db-autosync-mode))              ;auto sync when save a roam file
 
 (provide 'init-org)
