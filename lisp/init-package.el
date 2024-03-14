@@ -7,9 +7,9 @@
 ;;;Code:
 
 (require 'package)
-;(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(setq package-archives '(("gnu"   . "http://mirrors.cloud.tencent.com/elpa/gnu/")
-                         ("melpa" . "http://mirrors.cloud.tencent.com/elpa/melpa/")))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+;(setq package-archives '(("gnu"   . "http://mirrors.cloud.tencent.com/elpa/gnu/")
+;                         ("melpa" . "http://mirrors.cloud.tencent.com/elpa/melpa/")))
 
 (package-initialize)
 (eval-when-compile
