@@ -60,6 +60,7 @@
 
 (require 'init-package)
 (require 'init-themes)
+(require 'init-tools)
 (require 'init-org)
 
 (when *is-a-win*
