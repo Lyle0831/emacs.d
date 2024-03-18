@@ -17,6 +17,7 @@
     (setq org-roam-directory (file-truename "E:/Lei/roam-notes/")))
   :custom
   (org-roam-dailies-directory "daily/")
+  (org-roam-database-connector 'sqlite-builtin)
   :bind
   ("C-c n f" . org-roam-node-find)
   ("C-c n i" . org-roam-node-insert)
@@ -29,7 +30,7 @@
   ;("C-c n d" . org-roam-dailies-map)
   :config
   (require 'org-roam-dailies)
-  (completion-at-point)                     ;completion title when in link
+  ;(completion-at-point)                     ;completion title when in link
   (org-roam-db-autosync-mode))              ;auto sync when save a roam file
 
 (provide 'init-org)
