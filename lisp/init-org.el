@@ -7,6 +7,12 @@
 (global-set-key (kbd "C-c a") #'org-agenda)
 ;(global-set-key (kbd "C-c c") #'org-capture)
 
+(setq org-agenda-files '("~/Nutstore Files/roam-notes/agenda"))
+(setq org-deadline-warning-days 1)        ;show deadline things before 1 day
+(setq org-habit-show-habits t)            ;show habits in agenda
+(setq org-startup-folded t)               ;folded all headlines when open an org file
+(when *is-a-win*
+  (setq org-agenda-files '("e:/Lei/roam-notes/agenda")))
 
 (use-package org-roam
   :ensure t
@@ -30,7 +36,8 @@
   ;("C-c n d" . org-roam-dailies-map)
   :config
   (require 'org-roam-dailies)
-  ;(completion-at-point)                     ;completion title when in link
+  (completion-at-point)                     ;completion title when in link
   (org-roam-db-autosync-mode))              ;auto sync when save a roam file
 
 (provide 'init-org)
+

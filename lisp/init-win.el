@@ -259,12 +259,8 @@
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(global-display-line-numbers-mode t)
- '(org-agenda-files '("e:/Lei/roam-notes/agenda"))
- '(org-deadline-warning-days 1)
- '(org-habit-show-habits t)
  '(org-modules
    '(ol-bbdb ol-bibtex ol-docview ol-doi ol-eww ol-gnus org-habit ol-info ol-irc ol-mhe ol-rmail ol-w3m))
- '(org-startup-folded t)
  '(org-use-sub-superscripts '{})
  '(package-selected-packages
    '(lsp-mode yasnippet-snippets yasnippet auctex djvu nov org-noter org-roam pdf-tools zenburn-theme swiper-helm counsel ivy))
