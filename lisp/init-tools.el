@@ -3,7 +3,6 @@
 
 
 ;;;Code:
-
 ;;for ivy package
 (use-package counsel
   :ensure t)
