@@ -1,0 +1,1 @@
+("~/.emacs.d/" "~/Nutstore Files/roam-notes/")

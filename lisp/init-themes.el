@@ -19,8 +19,11 @@
   :config
   (setq dashboard-banner-logo-title "Welcome to Iven's Emacs!") ;; dashboard title
   (setq dashboard-startup-banner 'official) ;; dashboard picture
-  (setq dashboard-items '((recents  . 5)   ;; dashboard items number
-			  (agenda . 10)))
+  (setq dashboard-projects-backend 'projectile)
+  (setq dashboard-items '((recents  . 3)   ;; dashboard items number
+			  (projects . 5)
+			  (bookmarks . 2)
+			  (agenda . 8)))
   (setq dashboard-agenda-sort-strategy '(time-up)); agenda sort, time close first
   (setq dashboard-icon-type 'all-the-icons)
 			  

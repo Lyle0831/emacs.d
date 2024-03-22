@@ -21,5 +21,17 @@
   :bind
   (("C-s" . 'swiper)))
 
+;; for projectile
+(use-package projectile
+  :ensure t
+  :init
+  (projectile-mode +1)
+  :bind (:map projectile-mode-map
+	      ("C-c p" . projectile-command-map)))
+
+(use-package counsel-projectile
+  :ensure t
+  :after (projectile)
+  :init (counsel-projectile-mode))
 
 (provide 'init-tools)
