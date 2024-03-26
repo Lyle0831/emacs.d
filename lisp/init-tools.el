@@ -34,4 +34,15 @@
   :after (projectile)
   :init (counsel-projectile-mode))
 
+;; for company
+(use-package company
+  :ensure t
+  :init (global-company-mode)
+  :config
+    (setq company-minimum-prefix-length 1) ;complete when only 1 char
+    (setq company-idle-delay 0)            ;complete immediately
+    (setq company-selection-wrap-around t) ;cycle between the head and the tail
+    (setq company-show-numbers t)          ;show number in completion
+    (setq company-tooltip-align-annotations t);add annotations behind some completions
+    )
 (provide 'init-tools)
