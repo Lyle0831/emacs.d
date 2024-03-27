@@ -62,8 +62,8 @@
 (require 'init-themes)
 (require 'init-tools)
 (require 'init-org)
-(when *is-a-win*
-  (require 'init-win))
+;(when *is-a-win*
+;  (require 'init-win))
 
 (require 'hello)
 (provide 'init)
