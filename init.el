@@ -62,6 +62,7 @@
 (require 'init-themes)
 (require 'init-tools)
 (require 'init-org)
+(require 'init-out)
 ;(when *is-a-win*
 ;  (require 'init-win))
 
@@ -74,12 +75,13 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(counsel-projectile projectile use-package cmake-mode)))
+ '(package-selected-packages
+   '(anki-editor counsel-projectile projectile use-package cmake-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:family "Kaiti SC" :foundry "nil" :slant normal :weight regular :height 180 :width normal)))))
 
 

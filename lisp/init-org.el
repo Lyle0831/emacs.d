@@ -11,6 +11,7 @@
 (setq org-deadline-warning-days 1)        ;show deadline things before 1 day
 (setq org-habit-show-habits t)            ;show habits in agenda
 (setq org-startup-folded t)               ;folded all headlines when open an org file
+(setq org-support-shift-select t)       ;enable shift to select region in org files
 (when *is-a-win*
   (setq org-agenda-files '("e:/Lei/roam-notes/agenda")))
 

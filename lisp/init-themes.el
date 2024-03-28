@@ -26,7 +26,7 @@
 			  (agenda . 8)))
   (setq dashboard-agenda-sort-strategy '(time-up)); agenda sort, time close first
   (setq dashboard-icon-type 'all-the-icons)
-			  
+  (setq dashboard-center-content t)
   (dashboard-open))
 
 ;;for doom themes

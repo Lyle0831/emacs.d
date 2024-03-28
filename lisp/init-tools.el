@@ -45,4 +45,5 @@
     (setq company-show-numbers t)          ;show number in completion
     (setq company-tooltip-align-annotations t);add annotations behind some completions
     )
+
 (provide 'init-tools)
