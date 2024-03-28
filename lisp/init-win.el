@@ -17,7 +17,6 @@
 
 (use-package tex
   :ensure auctex
-  ;; :straight auctex ;;if use straight
   :custom
   (TeX-parse-self t) ;analysis tex file automatically
   (TeX-PDF-mode t)
@@ -29,7 +28,6 @@
 (use-package cdlatex
   :ensure t
   :after tex ; make sure cdlatex is loaded after auctex 
-  ;; :straight (:host github :repo "cdominik/cdlatex" ) ;; if use straight
   )
 
 
