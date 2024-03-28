@@ -25,12 +25,6 @@
   (setq-default TeX-master t) ;
   (add-hook 'LaTeX-mode-hook 'my/latex-hook)) ; add hook for LaTeX
 
-(use-package cdlatex
-  :ensure t
-  :after tex ; make sure cdlatex is loaded after auctex 
-  )
-
-
 (setq org-default-notes-file "E:/Lei/roam-notes/agenda/inbox.org")
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline org-default-notes-file "Tasks")
@@ -190,19 +184,6 @@
   (setq lsp-ui-doc-position 'top))
 ;;使用lsp-ui，在鼠标放在一个函数上时显示其相关信息
 
-(use-package projectile
-  :ensure t
-  :bind (("C-c p" . projectile-command-map))
-  :config
-  (setq projectile-mode-line "Projectile")
-  (setq projectile-track-known-projects-automatically nil))
-
-(use-package counsel-projectile
-  :ensure t
-  :after (projectile)
-  :init (counsel-projectile-mode))
-
-;;使用插件projectile，进行项目管理
 
 (use-package magit
   :ensure t)
